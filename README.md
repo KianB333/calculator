@@ -1,2 +1,2 @@
 # calculator
-A calculator do perform basic mathematics
+A calculator to perform basic mathematics
