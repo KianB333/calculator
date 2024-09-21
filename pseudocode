@@ -1,0 +1,19 @@
+- Goal: Create a calculator that that input numbers and methods (addiion, subtraction, multiplication,
+division) in order to output the result
+- Conditions: Do NOT use eval(), nor return "new Function()" which evaluates a string (I'm not fully sure why; Those methods will apparently do the work for you, without you understanding the fundamental principles related to the project.)
+- Context: n/a
+
+Steps:
+- Create interface
+- Link interface to javascript.js
+- Create functions to do the actual math
+- Output results to a user-visible field (input will also display here)
+
+Interface:
+- Blank page is fine, create a rectangle where hight == 2x width. (Scale with browser? Or stay small?)
+- Divide interfact into subsections
+    - User screen on top, Delete key to the right (results panel)
+    - Add/Subtract/Multiply/Divide on the far right going down (methods panel)
+    - Numbers 1-9 on the left, left to right and top-down (number panel)
+    - 0, period, and Enter at the bottom of the number panel (Enter probably should have been part of the methods panel, but it works out evenly this way)
+
