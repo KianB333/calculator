@@ -1,0 +1,22 @@
+html {
+    box-sizing: border-box;
+}
+  
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 0;
+}
+
+#interface {
+    height: 80vh;
+    width: 50vh;
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+}

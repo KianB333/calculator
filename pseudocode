@@ -7,22 +7,24 @@ Steps:
 - Create interface
 - Link interface to javascript.js
 - Create functions to do the actual math
-- Output results to a user-visible field (input will also display here)
+- Output results to a user-visible display field (input will also display here)
 
 Interface:
 - Blank page is fine, create a rectangle where hight == 2x width. (Scale with browser? Or stay small?)
 - Divide interfact into subsections
-    - User screen on top, Delete key to the right (results panel)
-    - Add/Subtract/Multiply/Divide on the far right going down (methods panel)
-    - Numbers 1-9 on the left, left to right and top-down (number panel)
-    - Period, 0, and Enter at the bottom of the number panel (Enter probably should have been part of the methods panel, but it works out evenly this way)
+    - Results on top (display)
+    - Delete/Add/Subtract/Multiply/Divide on the far right going down (methods)
+    - (, ), and Clear below the display panel and above the number panel (utilities) /*( and ) won't be implemented, so color them red or don't include them yet*/
+    - Numbers 1-9 on left-hand center, right-to-left and top-down in descending order underneath the utility panel (numbers)
+    - Period, 0, and = at the bottom of the number panel (Enter probably shouldn't have been part of the numbers panel, but it works out evenly this way)
 ex:
 |-------------|
-|texthere | ⌫ |
+| display     |
 |-------------|
-|1 |2 | 3 | + |
+|( |) | C | ⌫ |
+|7 |8 | 9 | + |
 |4 |5 | 6 | - |
-|7 |8 | 9 | * |
+|1 |2 | 3 | * |
 |. |0 | = | ÷ |
 |-------------|
 
