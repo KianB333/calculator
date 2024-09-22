@@ -15,15 +15,15 @@ Interface:
     - User screen on top, Delete key to the right (results panel)
     - Add/Subtract/Multiply/Divide on the far right going down (methods panel)
     - Numbers 1-9 on the left, left to right and top-down (number panel)
-    - 0, period, and Enter at the bottom of the number panel (Enter probably should have been part of the methods panel, but it works out evenly this way)
+    - Period, 0, and Enter at the bottom of the number panel (Enter probably should have been part of the methods panel, but it works out evenly this way)
 ex:
 |-------------|
-|texthere |DEL|
+|texthere | ⌫ |
 |-------------|
 |1 |2 | 3 | + |
 |4 |5 | 6 | - |
 |7 |8 | 9 | * |
-|0 |. | = | ÷ |
+|. |0 | = | ÷ |
 |-------------|
 
 
