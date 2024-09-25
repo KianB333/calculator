@@ -14,6 +14,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background-color: #C0CCD9;
 }
 
 .display {
@@ -26,6 +27,7 @@ html {
     border-radius: 10px;
     margin: 5px;
     font-size: 5vh;
+    background-color: white;
 }
 
 #controls {
@@ -45,7 +47,8 @@ html {
 .numbers button {
     width: 30%;
     margin: 1%;
-    font-size: 2.5vh; 
+    font-size: 2.5vh;
+    background-color: 
 }
 
 .methods {
@@ -60,4 +63,8 @@ html {
     width: 98%;
     margin: 3%;
     font-size: 2.5vh;
+}
+
+button:not(.number) {
+    background-color: #C0CCD9;
 }
