@@ -19,6 +19,13 @@ html {
 .display {
     display: flex;
     flex: 1;
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
+    border: solid black 2px;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 5vh;
 }
 
 #controls {
@@ -37,7 +44,8 @@ html {
 
 .numbers button {
     width: 30%;
-    margin: 1%; 
+    margin: 1%;
+    font-size: 2.5vh; 
 }
 
 .methods {
@@ -51,4 +59,5 @@ html {
 .methods button {
     width: 98%;
     margin: 3%;
+    font-size: 2.5vh;
 }
