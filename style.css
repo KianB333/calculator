@@ -14,7 +14,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background-color: #C0CCD9;
+    background-color: #676E77;
 }
 
 .display {
@@ -44,11 +44,19 @@ html {
     padding: 1% 0;
 }
 
-.numbers button {
+button {
     width: 30%;
     margin: 1%;
     font-size: 2.5vh;
-    background-color: 
+    background-color: white;
+}
+
+button.number {
+    border-color: #DBDADA;
+}
+
+button:hover {
+    opacity: 90%;
 }
 
 .methods {
@@ -65,6 +73,13 @@ html {
     font-size: 2.5vh;
 }
 
-button:not(.number) {
+button:not(.number, .delete) {
     background-color: #C0CCD9;
+    border-color: #BECEE7
+}
+
+.delete {
+    background-color: #BC787A;
+    border-color: #D8A0A6;
+    border-width: 1px;
 }
