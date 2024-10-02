@@ -30,5 +30,7 @@ ex:
 
 
 Functions:
-- Four switches, one for each operator (+, -, *, ÷)
-- Placeholder variables, two for numbers and one for operator.
+- Placeholder variables, two for numbers (num1/num2) and one for operator (op).
+- Include adding numbers to num1/num2 in event listener (if op exists, then num2)
+- = button calculates results, updates displayValue, and clears num1/op/num2.
+- Use four switches, one for each operator (+, -, *, ÷), to calculate.
