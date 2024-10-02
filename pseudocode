@@ -5,8 +5,8 @@ division) in order to output the result
 
 Steps:
 - Create interface
-- Link interface to javascript.js
 - Create functions to do the actual math
+- Link interface buttons to function input
 - Output results to a user-visible display field (input will also display here)
 
 Interface:
@@ -29,3 +29,6 @@ ex:
 |-------------|
 
 
+Functions:
+- Four switches, one for each operator (+, -, *, ÷)
+- Placeholder variables, two for numbers and one for operator.

@@ -73,12 +73,12 @@ button:hover {
     font-size: 2.5vh;
 }
 
-button:not(.number, .delete) {
+button:not(.number, .delete, .clear) {
     background-color: #C0CCD9;
     border-color: #BECEE7
 }
 
-.delete {
+.delete, .clear {
     background-color: #BC787A;
     border-color: #D8A0A6;
     border-width: 1px;
