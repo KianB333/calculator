@@ -134,6 +134,7 @@ btnEqual.addEventListener("click", () => {
 });
 const btnClear = document.querySelector(".clear");
 btnClear.addEventListener("click", () => clearCalc());
-//Updates num1/op/num2 values, and adds button content to display
+//Updates num1/op/num2 values, and adds button values to display
 
-
+const allBtns = document.querySelectorAll("button:not(.equals, .delete, .clear)");
+allBtns.forEach((btn) => btn.style.backgroundColor = "green");
