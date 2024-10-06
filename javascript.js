@@ -99,8 +99,8 @@ btn0.addEventListener("click", (e) => {
     displayValue.textContent += `${e.target.textContent}`;
     addNumber("0");
 });
-const btnPoint = document.querySelector(".point");
-btnPoint.addEventListener("click", (e) => {
+const btnDot = document.querySelector(".dot");
+btnDot.addEventListener("click", (e) => {
     displayValue.textContent += `${e.target.textContent}`;
     addNumber(".");
 });

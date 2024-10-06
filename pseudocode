@@ -35,3 +35,4 @@ Functions:
 - = button calculates results, then updates displayValue, then resets num1/op/num2.
 - Use four switches, one for each operator (+, -, *, ÷), to calculate.
 - Clear button clears display and resets num1/op/num2 values. 
+- Add a self-removing event listener to all number buttons (or all buttons?) to clear display on-click after a calculation.
