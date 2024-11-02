@@ -47,7 +47,12 @@ function clearCalc() {
     op = "";
     num2 = "";
     displayValue.textContent = "";
+    allBtns.forEach((btn) => btn.removeEventListener("mouseup", clearCalc));
 }
+//Clears all values + removes the clearCalc() event listeners
+
+const allBtns = document.querySelectorAll("button:not(.equals, .delete, .clear)");
+//For all numeric buttons
 
 const btn1 = document.querySelector(".one");
 btn1.addEventListener("click", (e) => {
@@ -124,17 +129,16 @@ btnDiv.addEventListener("click", (e) => {
     displayValue.textContent += `${" " + e.target.textContent + " "}`;
     addOperator("divide");
 });
+//Updates num1/op/num2 values, and adds button values to display
+
 const btnEqual = document.querySelector(".equals");
 btnEqual.addEventListener("click", () => {
     operate(num1, op, num2);
     displayValue.textContent = `${results} `;
-    num1 = "";
-    op = "";
-    num2 = "";
+    allBtns.forEach((btn) => btn.addEventListener("mouseup", clearCalc));
 });
-const btnClear = document.querySelector(".clear");
-btnClear.addEventListener("click", () => clearCalc());
-//Updates num1/op/num2 values, and adds button values to display
+//Executes current operation and preps buttons to clear on next press
 
-const allBtns = document.querySelectorAll("button:not(.equals, .delete, .clear)");
-allBtns.forEach((btn) => btn.style.backgroundColor = "green");
+const btnClear = document.querySelector(".clear");
+btnClear.addEventListener("click", () => clearCalc())
+//Clears all values
