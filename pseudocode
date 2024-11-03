@@ -36,4 +36,5 @@ Functions:
 - Use four switches, one for each operator (+, -, *, ÷), to calculate.
 - Clear button clears display and resets num1/op/num2 values. 
 - Add a self-removing event listener to all number buttons (or all buttons?) to clear display on-click after a calculation.
-- Update display when trying to add 3+ variables, instead of just adding onto display (will change operator/second number)
+- Update display when trying to add 3+ variables, instead of concatenating onto display (will update operator/second number)
+- Add working delete button, to remove most recent number based on whether num2 || op exist yet.
