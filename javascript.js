@@ -6,23 +6,21 @@ let op = "";
 let num2 = "";
 let results = "";
 
-/*function addNumber(num) {
-    if(op) {
-        num2 += num;
-    } else {
-        num1 += num;
-    }
-};*/
-//Amazing how similar my ideas were before taking a 1 month break, shown ^above vs ⌄below
-
 function addNum(numValue) {
-    op ? num2 += numValue : num1 += numValue;
+    !op ? num1 += numValue : num2 += numValue;
 }
 //Updates num1/num2, based on whether operator exists yet.
 
-
 function addOperator(operator) {
-    op = operator;
+    if(!num2) {
+        op = operator;
+    } else {
+        operate(num1, op, num2);
+        num1 = results;
+        op = operator;
+        num2 = "";
+        updateDisplay();
+    }
 }
 //Updates operator for calculation
 
@@ -33,7 +31,7 @@ function clearCalc() {
     displayValue.textContent = "";
     allBtns.forEach((btn) => btn.removeEventListener("mouseup", clearCalc));
 }
-//Clears all values + removes the event listeners triggering clearCalc()
+//Clears all values + removes the event listeners for clearCalc()
 
 function operate(num1, op, num2) {
     switch (op) {
@@ -61,7 +59,7 @@ function operate(num1, op, num2) {
 //The actual calculation
 
 const allBtns = document.querySelectorAll("button:not(.equals, .delete, .clear)");
-//Lumps all numeric buttons for clearCalc()
+//Lumps all numeric buttons for clearCalc(), including operator buttons
 
 const btn1 = document.querySelector(".one");
 btn1.addEventListener("click", (e) => {
