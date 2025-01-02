@@ -16,8 +16,7 @@ let results = "";
 //Amazing how similar my ideas were before taking a 1 month break, shown ^above vs ⌄below
 
 function addNum(numValue) {
-    op ? num1 += numValue : num2 += numValue;
-
+    op ? num2 += numValue : num1 += numValue;
 }
 //Updates num1/num2, based on whether operator exists yet.
 
