@@ -29,26 +29,35 @@ function clearCalc() {
     op = "";
     num2 = "";
     displayValue.textContent = "";
-    allBtns.forEach((btn) => btn.removeEventListener("mouseup", clearCalc));
+    continueCalc();
 }
 //Clears all values + removes the event listeners for clearCalc()
+
+function continueCalc() {
+    allNums.forEach((btn) => btn.removeEventListener("mouseup", clearCalc));
+}
+//removes the clearCalc() event listener from allNum, for when calc shouldn't be reset/it was just reset
 
 function operate(num1, op, num2) {
     switch (op) {
         case "+":
             results = Number(num1) + Number(num2);
+            updateDisplay();
             break;
 
         case "-":
             results = Number(num1) - Number(num2);
+            updateDisplay();
             break;
 
         case "*":
             results = Number(num1) * Number(num2);
+            updateDisplay();
             break;
 
         case "÷":
-            results = Number(num1) / Number(num2); 
+            results = Number(num1) / Number(num2);
+            updateDisplay(); 
             break;
 
         default:
@@ -58,8 +67,8 @@ function operate(num1, op, num2) {
 }
 //The actual calculation
 
-const allBtns = document.querySelectorAll("button:not(.equals, .delete, .clear)");
-//Lumps all numeric buttons for clearCalc(), including operator buttons
+const allNums = document.querySelectorAll(".number, .point");
+//Lumps all number buttons for clearCalc(), including decimal.
 
 const btn1 = document.querySelector(".one");
 btn1.addEventListener("click", (e) => {
@@ -111,7 +120,7 @@ btn0.addEventListener("click", (e) => {
     addNum("0");
     updateDisplay();
 });
-const btnDot = document.querySelector(".dot");
+const btnDot = document.querySelector(".point");
 btnDot.addEventListener("click", (e) => {
     addNum(".");
     updateDisplay();
@@ -120,21 +129,25 @@ const btnAdd = document.querySelector(".add");
 btnAdd.addEventListener("click", (e) => {
     addOperator("+");
     updateDisplay();
+    continueCalc();
 });
 const btnSub = document.querySelector(".subtract");
 btnSub.addEventListener("click", (e) => {
     addOperator("-");
     updateDisplay();
+    continueCalc();
 });
 const btnMult = document.querySelector(".multiply");
 btnMult.addEventListener("click", (e) => {
     addOperator("*");
     updateDisplay();
+    continueCalc();
 });
 const btnDiv = document.querySelector(".divide");
 btnDiv.addEventListener("click", (e) => {
     addOperator("÷");
     updateDisplay();
+    continueCalc();
 });
 //Updates num1/op/num2 values, and adds button values to display
 
@@ -143,9 +156,9 @@ const btnEqual = document.querySelector(".equals");
 btnEqual.addEventListener("click", () => {
     operate(num1, op, num2);
     displayValue.textContent = `${results} `;
-    allBtns.forEach((btn) => btn.addEventListener("mouseup", clearCalc));
+    allNums.forEach((btn) => btn.addEventListener("mouseup", clearCalc));
 });
-//Executes current operation and preps buttons to clear on next press
+//Executes current operation and preps number buttons to clear on next press (for new calculation)
 
 const btnClear = document.querySelector(".clear");
 btnClear.addEventListener("click", () => clearCalc())
