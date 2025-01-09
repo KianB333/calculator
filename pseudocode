@@ -38,4 +38,4 @@ Functions:
 - Add a self-removing event listener to all number buttons (or all buttons?) to clear display on-click after a calculation.
 - Update display when trying to add 3+ variables, instead of concatenating onto display (will override operator/second number)
 - 1/1/25:Misunderstood directions. Adding 2nd operator (3rd num) should execute existing operation, which will then become num1 for new operation.
-- Add working delete button, to remove most recent number based on whether num2 || op exist yet.
+- Add working backspace button, to remove most recent number/operator based on whether num2 || op exists yet.

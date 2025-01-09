@@ -11,14 +11,18 @@ function addNum(numValue) {
 }
 //Updates num1/num2, based on whether operator exists yet.
 
+function updateDisplay() {
+    displayValue.textContent = `${num1} ${op} ${num2}`;
+}
+
 function addOperator(operator) {
     if(!num2) {
         op = operator;
     } else {
         operate(num1, op, num2);
+        clearCalc();
         num1 = results;
         op = operator;
-        num2 = "";
         updateDisplay();
     }
 }
@@ -43,21 +47,25 @@ function operate(num1, op, num2) {
         case "+":
             results = Number(num1) + Number(num2);
             updateDisplay();
+            clearCalc();
             break;
 
         case "-":
             results = Number(num1) - Number(num2);
             updateDisplay();
+            clearCalc();
             break;
 
         case "*":
             results = Number(num1) * Number(num2);
             updateDisplay();
+            clearCalc();
             break;
 
         case "÷":
             results = Number(num1) / Number(num2);
-            updateDisplay(); 
+            updateDisplay();
+            clearCalc(); 
             break;
 
         default:
@@ -156,6 +164,7 @@ const btnEqual = document.querySelector(".equals");
 btnEqual.addEventListener("click", () => {
     operate(num1, op, num2);
     displayValue.textContent = `${results} `;
+    num1 = results;
     allNums.forEach((btn) => btn.addEventListener("mouseup", clearCalc));
 });
 //Executes current operation and preps number buttons to clear on next press (for new calculation)
@@ -164,6 +173,22 @@ const btnClear = document.querySelector(".clear");
 btnClear.addEventListener("click", () => clearCalc())
 //Clears all values when clicked
 
-function updateDisplay() {
-    displayValue.textContent = `${num1} ${op} ${num2}`;
-}
+const backspace = document.querySelector(".backspace");
+backspace.addEventListener("click", () => {
+    if(num2) {
+        num2 = num2.toString().slice(0, -1);
+        num2 ? Number(num2) : num2;
+        //prevents returning a zero when empty
+    } else if (op) {
+        op = "";
+    } else if (num1) {
+        num1 = (num1.toString().slice(0, -1));
+        num1 ? Number(num1) : num1;
+        //prevents returning a zero when empty
+    } else {
+        clearCalc();
+    }
+    updateDisplay();
+    continueCalc();
+});
+//Removes the rightmost number or operator
