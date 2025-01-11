@@ -44,30 +44,31 @@ function continueCalc() {
 
 function operate(num1, op, num2) {
     switch (op) {
-        case "+":
-            results = Number(num1) + Number(num2);
-            updateDisplay();
-            clearCalc();
-            break;
-
-        case "-":
-            results = Number(num1) - Number(num2);
-            updateDisplay();
-            clearCalc();
-            break;
-
-        case "*":
-            results = Number(num1) * Number(num2);
-            updateDisplay();
-            clearCalc();
-            break;
-
         case "÷":
             results = Number(num1) / Number(num2);
             updateDisplay();
             clearCalc(); 
             break;
 
+        case "×":
+            results = Number(num1) * Number(num2);
+            updateDisplay();
+            clearCalc();
+            break;
+            
+        case "-":
+            results = Number(num1) - Number(num2);
+            updateDisplay();
+            clearCalc();
+            break;
+
+        case "+":
+            results = Number(num1) + Number(num2);
+            updateDisplay();
+            clearCalc();
+            break;
+    
+    
         default:
             results = "ERROR";
             console.log("Something went wrong with operate!");
@@ -133,9 +134,18 @@ btnDot.addEventListener("click", (e) => {
     addNum(".");
     updateDisplay();
 });
-const btnAdd = document.querySelector(".add");
-btnAdd.addEventListener("click", (e) => {
-    addOperator("+");
+
+//number manipulation above, operators below
+
+const btnDiv = document.querySelector(".divide");
+btnDiv.addEventListener("click", (e) => {
+    addOperator("÷");
+    updateDisplay();
+    continueCalc();
+});
+const btnMult = document.querySelector(".multiply");
+btnMult.addEventListener("click", (e) => {
+    addOperator("×");
     updateDisplay();
     continueCalc();
 });
@@ -145,15 +155,9 @@ btnSub.addEventListener("click", (e) => {
     updateDisplay();
     continueCalc();
 });
-const btnMult = document.querySelector(".multiply");
-btnMult.addEventListener("click", (e) => {
-    addOperator("*");
-    updateDisplay();
-    continueCalc();
-});
-const btnDiv = document.querySelector(".divide");
-btnDiv.addEventListener("click", (e) => {
-    addOperator("÷");
+const btnAdd = document.querySelector(".add");
+btnAdd.addEventListener("click", (e) => {
+    addOperator("+");
     updateDisplay();
     continueCalc();
 });
