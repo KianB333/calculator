@@ -134,6 +134,11 @@ btnDot.addEventListener("click", (e) => {
     addNum(".");
     updateDisplay();
 });
+const btnNeg = document.querySelector(".negative");
+btnNeg.addEventListener("click", (e) => {
+    num2 ? num2 *= -1 : num1 *= -1;
+    updateDisplay();
+});
 
 //number manipulation above, operators below
 
