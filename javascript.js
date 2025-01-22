@@ -45,25 +45,25 @@ function continueCalc() {
 function operate(num1, op, num2) {
     switch (op) {
         case "÷":
-            results = Number(num1) / Number(num2);
+            results = Math.round((Number(num1) / Number(num2)) * 1000) / 1000;
             updateDisplay();
             clearCalc(); 
             break;
 
         case "×":
-            results = Number(num1) * Number(num2);
+            results = Math.round((Number(num1) * Number(num2)) * 1000) / 1000;
             updateDisplay();
             clearCalc();
             break;
             
         case "-":
-            results = Number(num1) - Number(num2);
+            results = Math.round((Number(num1) - Number(num2)) * 1000) / 1000;
             updateDisplay();
             clearCalc();
             break;
 
         case "+":
-            results = Number(num1) + Number(num2);
+            results = Math.round((Number(num1) + Number(num2)) * 1000) / 1000;
             updateDisplay();
             clearCalc();
             break;

@@ -39,3 +39,4 @@ Functions:
 - Update display when trying to add 3+ variables, instead of concatenating onto display (will override operator/second number)
 - 1/1/25:Misunderstood directions. Adding 2nd operator (3rd num) should execute existing operation, which will then become num1 for new operation.
 - Add working backspace button, to remove most recent number/operator based on whether num2 || op exists yet.
+- Round decimal points to the nearest 3 digits, if applicable (Math.round(num * 1000) / 1000).
