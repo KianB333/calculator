@@ -43,4 +43,5 @@ Functions:
 - Prevent division by 0, add snarky message instead.
 - Disable point button after inputting decimal point.
     - Doesn't work if (num1 % 1 != 0 && !op) || (num2 % 0 != 0).
-    - 2/11/25: User can still add a second decimal point if a. decimal is divisible by 0 (i.e., "3.0.0") or b. no number has been put after the decimal (i.e, "39..1")
+    - 2/11/25: User can still add a second decimal point if: a. decimal is divisible by 0 (i.e., "3.0.0") or b. no number has been put after the decimal (i.e, "39..1")
+    - Search for "." instead of using "% 1 == 0" to disable point button
