@@ -43,35 +43,40 @@ function continueCalc() {
 //removes the clearCalc() event listener from allNum, for when calc shouldn't be reset/it was just reset
 
 function operate(num1, op, num2) {
-    switch (op) {
-        case "÷":
-            results = Math.round((Number(num1) / Number(num2)) * 1000) / 1000;
-            updateDisplay();
-            clearCalc(); 
-            break;
+    if(op == "÷" && num2 == 0) {
+        results = "lol you wish";
+        updateDisplay();
+        clearCalc();
+    //snarky divide-by-zero clause
+    } else {
+        switch (op) {
+            case "÷":
+                results = Math.round((Number(num1) / Number(num2)) * 1000) / 1000;
+                updateDisplay();
+                clearCalc(); 
+                break
+            case "×":
+                results = Math.round((Number(num1) * Number(num2)) * 1000) / 1000;
+                updateDisplay();
+                clearCalc();
+                break;
 
-        case "×":
-            results = Math.round((Number(num1) * Number(num2)) * 1000) / 1000;
-            updateDisplay();
-            clearCalc();
-            break;
-            
-        case "-":
-            results = Math.round((Number(num1) - Number(num2)) * 1000) / 1000;
-            updateDisplay();
-            clearCalc();
-            break;
-
-        case "+":
-            results = Math.round((Number(num1) + Number(num2)) * 1000) / 1000;
-            updateDisplay();
-            clearCalc();
-            break;
-    
-    
-        default:
-            results = "ERROR";
-            console.log("Something went wrong with operate!");
+            case "-":
+                results = Math.round((Number(num1) - Number(num2)) * 1000) / 1000;
+                updateDisplay();
+                clearCalc();
+                break
+            case "+":
+                results = Math.round((Number(num1) + Number(num2)) * 1000) / 1000;
+                updateDisplay();
+                clearCalc();
+                break;
+            default:
+                results = "ERROR";
+                updateDisplay();
+                clearCalc();
+                console.log("Something went wrong with operate!");
+        }
     }
 }
 //The actual calculation
@@ -131,9 +136,13 @@ btn0.addEventListener("click", (e) => {
 });
 const btnDot = document.querySelector(".point");
 btnDot.addEventListener("click", (e) => {
-    addNum(".");
-    updateDisplay();
-});
+    if((num1 % 1 != 0 && !op) || num2 % 1 != 0) {
+    } else {
+        addNum(".");
+        updateDisplay();
+    }
+    //Only allows point button if the previous number is evenly divisible by 0.
+}); 
 const btnNeg = document.querySelector(".negative");
 btnNeg.addEventListener("click", (e) => {
     num2 ? num2 *= -1 : num1 *= -1;
