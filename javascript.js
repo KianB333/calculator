@@ -136,7 +136,7 @@ btn0.addEventListener("click", (e) => {
 });
 const btnDot = document.querySelector(".point");
 btnDot.addEventListener("click", (e) => {
-    if((num1 % 1 != 0 && !op) || num2 % 1 != 0) {
+    if((num1.includes(".") && !op) || num2.includes(".")) {
     } else {
         addNum(".");
         updateDisplay();
