@@ -45,3 +45,8 @@ Functions:
     - Doesn't work if (num1 % 1 != 0 && !op) || (num2 % 0 != 0).
     - 2/11/25: User can still add a second decimal point if: a. decimal is divisible by 0 (i.e., "3.0.0") or b. no number has been put after the decimal (i.e, "39..1")
     - Search for "." instead of using "% 1 == 0" to disable point button
+- Add keyboard support.
+    - Combine multiple event listener triggers? Don't want to write code twice.
+    - Use switch statement on keypress > click() event to corresponding button? 
+
+- Make calculator more lke real calculators, where previous entry is stored/displayed up top.

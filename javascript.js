@@ -35,7 +35,7 @@ function clearCalc() {
     displayValue.textContent = "";
     continueCalc();
 }
-//Clears all values + removes the event listeners for clearCalc()
+//Clears all values, then continueCalc() to remove the event listeners triggering clearCalc()
 
 function continueCalc() {
     allNums.forEach((btn) => btn.removeEventListener("mouseup", clearCalc));
@@ -80,6 +80,8 @@ function operate(num1, op, num2) {
     }
 }
 //The actual calculation
+
+
 
 const allNums = document.querySelectorAll(".number, .point");
 //Lumps all number buttons for clearCalc(), including decimal.
@@ -134,8 +136,8 @@ btn0.addEventListener("click", (e) => {
     addNum("0");
     updateDisplay();
 });
-const btnDot = document.querySelector(".point");
-btnDot.addEventListener("click", (e) => {
+const btnPoint = document.querySelector(".point");
+btnPoint.addEventListener("click", (e) => {
     if((num1.includes(".") && !op) || num2.includes(".")) {
     } else {
         addNum(".");
@@ -210,3 +212,60 @@ backspace.addEventListener("click", () => {
     continueCalc();
 });
 //Removes the rightmost number or operator
+
+let wholePage = document.querySelector("html");
+wholePage.addEventListener("keydown", (e) => {
+    if(!isNaN(Number(e.key))) {
+        const buttons = {
+            1: btn1,
+            2: btn2,
+            3: btn3,
+            4: btn4, 
+            5: btn5,
+            6: btn6,
+            7: btn7,
+            8: btn8,
+            9: btn9
+        };
+        buttons[e.key].click();
+    } else {
+        switch(e.key) {
+            case "Escape":
+                btnClear.click();
+                break;
+            
+            case "Backspace":
+                backspace.click();
+                break;
+
+            case "/":
+                btnDiv.click();
+                break;
+
+            case "*":
+                btnMult.click();
+                break;
+
+            case "+":
+                btnAdd.click();
+                break;
+
+            case "-":
+                btnSub.click();
+                break;
+
+            case "Enter":
+                btnEqual.click();
+                break;
+
+            case ".":
+                btnPoint.click();
+                break;
+
+            default:
+                ;
+        }
+    }
+})
+//Keyboard support; numbers are separate to reduce code noise.
+//(no shortcut for negative, even irl)
