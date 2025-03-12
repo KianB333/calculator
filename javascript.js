@@ -213,8 +213,11 @@ backspace.addEventListener("click", () => {
 });
 //Removes the rightmost number or operator
 
-let wholePage = document.querySelector("html");
+const allBtns = document.querySelectorAll("button");
+const wholePage = document.querySelector("html");
 wholePage.addEventListener("keydown", (e) => {
+    allBtns.forEach((btn) => btn.blur());
+    //removes button focus when switching from clicks to keys
     if(!isNaN(Number(e.key))) {
         const buttons = {
             1: btn1,
