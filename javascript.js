@@ -228,7 +228,8 @@ wholePage.addEventListener("keydown", (e) => {
             6: btn6,
             7: btn7,
             8: btn8,
-            9: btn9
+            9: btn9,
+            0: btn0
         };
         buttons[e.key].click();
     } else {
